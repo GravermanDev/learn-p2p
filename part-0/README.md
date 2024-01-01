@@ -2,7 +2,7 @@
 This is the beginning of my series on peer-to-peer networks in Rust.
 
 ## Video script
-After this video, you'll understand the basic theory behind peer-to-peer networks. Today, I'll show you how all of this works on paper, however in future videos I'll explain actual code examples in the Rust programming language. 
+After this video, you'll understand the basic theory behind peer-to-peer networks. Today, I'll show you how all of this works on paper, however in future videos I'll go deeper into the interesting concepts and explain actuall code.
 
 It's important to note that this is also something new to me and I will make mistakes. Hopefully we can all learn, and maybe make a community project if the channel continues to grow. Let's get into it.
 
@@ -11,10 +11,14 @@ A peer to peer network is a network distributed decentrally over different machi
 
 The more social reason for peer to peer networks, is that no one group controls the system, these networks can allow for a more democratic control over the internet. This can be very important in many cases, for example in fight agaist oppression. There are multiple anti-authoritarian groups using these tools to rebel agaist repressive governments. I'm actually very interested in social implications of different technologies, so if you want my take on tech such as AI or peer-to-peer networks, I'll be glad to give some of my radical ideas here.
 
-### **The Internet Protocol**
-Back to the theory. Let's first examine the basics of internet, so we can understand how networking works in general, this applies to all kinds of networks, not just p2p. 
+# **The Internet Protocol (IP)**
+Before diving into the specifics of peer-to-peer networks, let's start with the basics of the internet to understand how networking functions at a fundamental level. This applies to all types of networks, not just peer-to-peer. For those familiar with networking, feel free to skip ahead.
 
-The Internet Protocol, in short IP, is a protocol, meaning it is a set of rules that allow machines to communicate with each other. The Internet Protocal was revolutionary because it allowed computers to communicate on a massive scale. Imagine this is a region with an internet infrastructure set up like this. IP enables networks to send packets, to each other. The way it works is by giving individual devices an IP address. Next routers a table of how to get to some address. The packets navigate the network based on the protocol, and they get to the destination.
+The Internet Protocol, or IP for short, is a set of rules that govern how machines communicate over a network. It's a crucial component of the TCP/IP protocol suite, which forms the foundation of the Internet. IP enabled computers to connect and communicate on a massive scale. Imagine a region with an established internet infrastructure. Here, IP facilitates the exchange of data by assigning IP addresses to each device on the network. Routers, using these addresses, determine the best path to forward packets to their destination. There are two versions of IP in use: IPv4 and the newer IPv6, which was developed to address the issue of IPv4 address exhaustion, most of the internet still uses IPv4.
 
-### **TCP protocol**
-IP allows us to send packets, which are these small bits of data, usually couple hundred bytes, but what if we want to send a video? The TCP protocol splits big files into packets and sends them in a way that doesn't corrupt the entire file, after that it instructs the computer on how to reconstruct the files. While doing all of that, it deals with packet loss and also allows computers to have multiple connections with each other.
+# **TCP Protocol**
+While IP allows us to send packets, which are small bits of data, typically a few hundred bytes in size, what happens when we need to send larger files, like videos? TCP works on top of IP and is designed for the reliable and ordered delivery of a stream of packets on the internet. It ensures that large files are split into manageable packets, transmitted, and then correctly reassembled at the destination. If a packet is lost during transmission, TCP detects this and resends the lost packet. Furthermore, TCP is responsible for flow and congestion control, ensuring that data transmission is efficient and adapts to varying network conditions.
+
+I haven't watched the entire series yet, but I can comfortably recommend [this](https://youtu.be/bzja9fQWzdA) series about implementing both TCP and IP for the ones that know low-level linux.
+
+### ****
